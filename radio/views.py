@@ -21,4 +21,4 @@ def login_view(request):
             else:
                 # invalid login
                 pass
-        return render(request, 'login.html')
+        return render(request, 'radio/login.html')
