@@ -1,13 +1,16 @@
-{% extends 'base.html/layouts' %}
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
 
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'css/user-auth.css' %}">
 <section class="user-form-part">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-12 col-lg-12 col-xl-10">
                 <div class="user-form-logo">
-                    <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                    <a href="{% url 'radio:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
                 </div>
                 <div class="user-form-card">
                     <div class="user-form-title">
@@ -24,7 +27,7 @@
                         <div class="user-form-divider">
                             <p>or</p>
                         </div>
-                        <form class="user-form" method="post" action="{% url 'login' %}">
+                        <form class="user-form" method="post" action="{% url 'radio:login' %}">
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Enter your email">
@@ -38,13 +41,13 @@
                             </div>
                             <div class="form-button">
                                 <button type="submit">login</button>
-                                <p>Forgot your password?<a href="{% url 'reset_password' %}">reset here</a></p>
+                                <p>Forgot your password?<a href="{% url 'radio:reset_password' %}">reset here</a></p>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="user-form-remind">
-                    <p>Don't have any account?<a href="{% url 'register' %}">register here</a></p>
+                    <p>Don't have any account?<a href="{% url 'radio:register' %}">register here</a></p>
                 </div>
                 <div class="user-form-footer">
                     <p>Greeny | &COPY; Copyright by <a href="#">Mironcoder</a></p>
