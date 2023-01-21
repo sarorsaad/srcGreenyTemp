@@ -6,15 +6,26 @@ from django.contrib.auth.views import PasswordResetView
 def home_view(request):
         return render(request, 'radio/index.html')
 
-def register_view(request):
-        return render(request, 'radio/register.html')
-   
 
-       
+def dashboard(request):
+        # Code to handle the request and generate the response goes here
+        return render(request, 'radio/dashboard.html')
 
-def login_view(request):
-        return render(request, 'radio/login.html')
+
+def physician_portal(request):
+        # Code to handle the request and generate the response goes here
+        return render(request, 'radio/physician_portal.html')
         
+def receptionist_portal(request):
+        # Code to handle the request and generate the response goes here
+        return render(request, 'radio/receptionist_portal.html')       
+ 
+def appointment_booking(request):
+        return render(request, 'radio/appointment_booking.html')
 
-def reset_password_view(request):
-        return render(request, 'radio/reset_password.html')
+def reports(request):
+        return render(request, 'radio/reports.html')
+
+def consents(request):
+        return render(request, 'radio/consents.html')
+    

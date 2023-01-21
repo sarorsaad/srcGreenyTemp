@@ -34,32 +34,29 @@
     <body>
 
         
-        <div class="backdrop"></div>
-        <a class="backtop fas fa-arrow-up" href="#"></a>
-    
-    <div class="header-top alert fade show">
-        <p>20% Discount All New Customers <a href="{% url 'radio:register' %}">get register</a></p>
+      
+         
+        <div  style="display: flex; flex-direction: row; height: 100vh;">
+            <div class="sidebar" style="width: 200px; height: 100%;">
+                {% include 'partial/sidebar.html' %}
+            </div>
+        <div class="main-content" style="flex: 1;">
 
-        <button data-bs-dismiss="alert"><i class="fas fa-times"></i></button>
+            <div class="backdrop"></div>
+            <a class="backtop fas fa-arrow-up" href="#"></a>
+        
+        <div class="header-top alert fade show">
+            <p>20% Discount All New Customers <a href="{% url 'account:register' %}">get register</a></p>
+    
+            <button data-bs-dismiss="alert"><i class="fas fa-times"></i></button>
+        </div>
+            {% include 'partial/header.html' %}
+            {% block content %}
+            {% endblock content %}
+            {% include 'partial/footer.html' %}
+        </div>
     </div>
 
-
-        <!--=====================================
-                    HEADER PART START
-        =======================================-->
-        {% include 'partial/header.html' %}
-
-   
-
-  
-        {% block content %}
-       
-        {% endblock content %}
-    
-
-
-    
-        {% include 'partial/footer.html' %}
       
 
 

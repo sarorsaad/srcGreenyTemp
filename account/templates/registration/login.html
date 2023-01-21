@@ -27,7 +27,7 @@
                         <div class="user-form-divider">
                             <p>or</p>
                         </div>
-                        <form class="user-form" method="post" action="{% url 'radio:login' %}">
+                        <form class="user-form" method="post" action="{% url 'account:login' %}">
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Enter your email">
@@ -41,13 +41,13 @@
                             </div>
                             <div class="form-button">
                                 <button type="submit">login</button>
-                                <p>Forgot your password?<a href="{% url 'radio:reset_password' %}">reset here</a></p>
+                                <p>Forgot your password?<a href="{% url 'account:reset_password' %}">reset here</a></p>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="user-form-remind">
-                    <p>Don't have any account?<a href="{% url 'radio:register' %}">register here</a></p>
+                    <p>Don't have any account?<a href="{% url 'account:register' %}">register here</a></p>
                 </div>
                 <div class="user-form-footer">
                     <p>Greeny | &COPY; Copyright by <a href="#">Mironcoder</a></p>

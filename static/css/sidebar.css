@@ -1,0 +1,6 @@
+.sidebar {
+    position: fixed; /* keep the sidebar in a fixed position */
+    top: 0; /* align the sidebar to the top of the page */
+    left: 0; /* align the sidebar to the left of the page */
+    overflow-y: auto; /* enable scrollbar for the sidebar */
+}
