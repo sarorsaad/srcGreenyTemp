@@ -1,6 +1,14 @@
 /*========================================
             INDEX PAGE STYLE
 =========================================*/
+body {
+  background-image: url('images/background_image.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
 .home-index-slider .dandik {
   right: 30px;
 }

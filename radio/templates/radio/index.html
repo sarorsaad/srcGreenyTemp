@@ -1,9 +1,8 @@
 {% extends 'layouts/base.html' %}
-
-
-
-
-
+{% load static %}
 {% block content %}
-    <p>This is the home page content.</p>
+<img src="{% static 'images/background_image.png' %}" id="background-image">
+<div id="content">
+  <!-- Add your content here -->
+</div>
 {% endblock %}
