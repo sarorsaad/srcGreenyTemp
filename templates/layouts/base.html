@@ -42,15 +42,10 @@
                 {% include 'partial/sidebar.html' %}
             </div>
         <div class="main-content" style="flex: 1;">
-
             <div class="backdrop"></div>
             <a class="backtop fas fa-arrow-up" href="#"></a>
         
-        <div class="header-top alert fade show">
-            <p>20% Discount All New Customers <a href="{% url 'account:register' %}">get register</a></p>
-    
-            <button data-bs-dismiss="alert"><i class="fas fa-times"></i></button>
-        </div>
+            {% include 'partial/header_top.html' %}
             {% include 'partial/header.html' %}
             {% block content %}
             {% endblock content %}

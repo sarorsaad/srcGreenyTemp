@@ -5,6 +5,7 @@ from .views import physician_portal
 from .views import receptionist_portal
 from .views import appointment_booking
 from .views import consents
+from .views import technicians_portal
 
 
 app_name='radio'
@@ -17,6 +18,8 @@ urlpatterns = [
     path('appointment_booking/', appointment_booking, name='appointment_booking'),
     path('reports/', views.reports, name='reports'),
     path('consents/', consents, name='consents'),
+    path('technicians/', technicians_portal, name='Technicians'),
+    path('radiologist_portal/', views.radiologist_portal, name='radiologist_portal'),
    
    
 ]

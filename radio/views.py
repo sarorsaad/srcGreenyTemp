@@ -28,4 +28,10 @@ def reports(request):
 
 def consents(request):
         return render(request, 'radio/consents.html')
+
+def technicians_portal(request):
+        return render(request, 'radio/technicians_portal.html')
+
+def radiologist_portal(request):
+    return render(request, 'radiologist_portal.html')
     

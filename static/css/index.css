@@ -7,6 +7,22 @@ body {
   background-position: center;
 }
 
+.header-top {
+  position: fixed;
+  top: 0;
+  /* Other styling */
+}
+.header {
+  position: fixed;
+  top: 0;
+  /* Other styling */
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  width: 200px;
+  height: 100%;
+}
 
 
 .home-index-slider .dandik {

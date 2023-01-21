@@ -7,7 +7,7 @@
         margin-bottom: 10px; /* add a bottom margin for spacing */
     }
 </style>
-<div class="sidebar" style="background-color: #008a60; width: 200px; height: 100%; ">
+<!-- <div class="sidebar" style="background-color: #008a60; width: 200px; height: 100%; ">
     <div class="logo">
         <img src="{% static 'images/sidebar/Logo-ministry.png' %}" alt="Saudi Arabia Ministry of Health">
     </div>
@@ -41,6 +41,51 @@
             </ul>
         </div>
     <div class="buttons">
+        <button class="btn btn-primary">Add New Request</button>
+        <button class="btn btn-primary">Book New Patient</button>
+    </div>
+</div> -->
+
+
+<div class="sidebar" style="background-color: #008a60; width: 200px; height: 100%  ">
+    <div class="top-logo">
+        <img src="{% static 'images/sidebar/Logo-ministry.png' %}" alt="Saudi Arabia Ministry of Health">
+    </div>
+    <div class="main-content">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'radio:dashboard' %}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account:profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'radio:Technicians' %}">Technicians</a>
+            </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'radio:radiologist_portal' %}">Radiologist</a>
+        </li>
+         
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'radio:physician' %}">Physician</a>
+        </li>   
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'radio:receptionist' %}">Receptionist</a>
+        </li>     
+                   
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'radio:appointment_booking' %}">Appointment/Booking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'radio:reports' %}">Reports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'radio:consents' %}">Consents</a>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom-buttons">
         <button class="btn btn-primary">Add New Request</button>
         <button class="btn btn-primary">Book New Patient</button>
     </div>
