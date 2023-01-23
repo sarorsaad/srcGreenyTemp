@@ -19,7 +19,7 @@ urlpatterns = [
     path('reports/', views.reports, name='reports'),
     path('consents/', consents, name='consents'),
     path('technicians/', technicians_portal, name='Technicians'),
-    path('radiologist_portal/', views.radiologist_portal, name='radiologist_portal'),
+    path('radiologist_portal/', views.radiologist_portal, name='radiologist'),
    
    
 ]

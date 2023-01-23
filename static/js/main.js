@@ -4,6 +4,9 @@
 //========================================
 //          HEADER SCROLL FIXED
 //========================================
+
+
+
 $(window).on("scroll", function(){
     var scrolling = $(this).scrollTop();
     // console.log(scrolling)

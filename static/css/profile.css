@@ -10,11 +10,12 @@
   border: 2px solid var(--primary);
 }
 
-.profile-image a img {
+.profileimage {
   width: 80px;
   border-radius: 50%;
   border: 3px solid var(--white);
 }
+
 
 .profile-btn {
   margin-top: 33px;
@@ -51,3 +52,5 @@
     margin-bottom: 20px;
   }
 }
+
+

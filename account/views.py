@@ -1,8 +1,32 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
+
+from .models import Profile , UserPersonal_info , UserBio_info
+
+from django.contrib.auth.models import User
+
+
+
+
 
 # Create your views here.
 def profile(request):
-    return render(request, 'registration/profile.html')
+    profile, created = Profile.objects.get_or_create(user=request.user)
+    personal_info = UserPersonal_info.objects.filter(user=profile.user)
+    bio_info = UserBio_info.objects.filter(user=profile.user)
+    if personal_info.exists():
+       print(personal_info.values())
+    else:
+       print('No personal_info data found.')
+
+    if bio_info.exists():
+       print(bio_info.values())
+    else:
+       print('No bio_info data found.')
+
+
+    return render(request, 'registration/profile.html',{'profile':profile , 
+    'personal_info':personal_info ,'bio_info':bio_info })
+
 
 
 def register_view(request):

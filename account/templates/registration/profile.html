@@ -26,20 +26,29 @@
                     <div class="account-content">
                         <div class="row">
                             <div class="col-lg-2">
-                                <div class="profile-image">
-                                    <a href="#"><img src="images/user.png" alt="user"></a>
+                                <div class="profileimage  ">
+                                    {% if profile.image %}
+                                            <img  class="profileimage"  style= "  width: 80px;
+                                            border-radius: 50%;
+                                            border: 3px solid var(--white);" src="{{ profile.image.url }}" alt="user">
+                                        {% else %}
+                                            <img class="profileimage" style="  width: 80px;
+                                            border-radius: 50%;
+                                            border: 3px solid var(--white);"  src="{% static 'default_image.jpg' %}" alt="user">
+                                        {% endif %}
+
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">name</label>
-                                    <input class="form-control" type="text" value="{{ user.name }}">
+                                    <input class="form-control" type="text" value="{{ profile.user.username }}">
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Email</label>
-                                    <input class="form-control" type="email" value="{{ user.email }}">
+                                    <input class="form-control" type="email" value="{{ profile.user.email }}">
                                 </div>
                             </div>
                             <div class="col-lg-2">
@@ -51,19 +60,20 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-lg-12">
                 <div class="account-card">
                     <div class="account-title">
-                        <h4>contact number</h4>
+                        <h4>Personal_info</h4>
                         <button data-bs-toggle="modal" data-bs-target="#contact-add">add contact</button>
                     </div>
                     <div class="account-content">
                         <div class="row">
-                            {% for contact in user.contacts.all %}
+                            {% for personal_data in personal_info %}
                             <div class="col-md-6 col-lg-4 alert fade show">
-                                <div class="profile-card contact {% if contact.is_primary %}active{% endif %}">
-                                    <h6>{{ contact.type }}</h6>
-                                    <p>{{ contact.number }}</p>
+                                <div class="profile-card contact">
+                                    <h6>iqama_id :{{ personal_data.iqama_id }}</h6>
+                                    <p>{{ personal_data.mobile }}</p>
                                     <ul>
                                         <li><button class="edit icofont-edit" title="Edit This" data-bs-toggle="modal" data-bs-target="#contact-edit"></button></li>
                                         <li><button class="trash icofont-ui-delete" title="Remove This" data-bs-dismiss="alert"></button></li>
@@ -74,7 +84,34 @@
                         </div>
                     </div>
                 </div>
-</div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="account-card">
+                    <div class="account-title">
+                        <h4>User Bio List</h4>
+                    </div>
+                    <div class="account-content">
+                        <div class="row">
+                            {% for user_bio in bio_info %}
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="profile-card bio">
+                                        <h6>Job Position:</h6>
+                                        <p> {{ user_bio.job_position }}</p>
+                                        <h6>Department:</h6>
+                                        <p>{{ user_bio.department }}</p>
+                                        <h6>SCFHS:</h6>
+                                        <p>S{{ user_bio.SCFHS }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
         </div>
     </div>
 </section>
@@ -333,7 +370,32 @@
                 </div> 
             </div> 
         </div>
+
         {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
   
 
 

@@ -1,9 +1,9 @@
 {% load static %}
 
 
-<header class="header-part">
+<header class="header-part ">
     <div class="container">
-        <div class="header-content">
+        <div class="header-content ">
             <div class="header-media-group">
                 <button class="header-user"><img src="{% static 'images/user.png' %}" alt="user"></button>
                 <a href="{% url 'radio:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
@@ -13,7 +13,15 @@
                 <img src="{% static 'images/logo.png' %}" alt="logo">
             </a>
             <a href="{% url 'account:login' %}" class="header-widget" title="My Account">
-                <img src="{% static 'images/user.png' %}" alt="user">
+                {% if profile.image %}
+                <img  class="profileimage"  style= "  width: 80px;
+                border-radius: 50%;
+                border: 3px solid var(--white);" src="{{ profile.image.url }}" alt="user">
+            {% else %}
+                <img class="profileimage" style="  width: 80px;
+                border-radius: 50%;
+                border: 3px solid var(--white);"  src="{% static 'default_image.jpg' %}" alt="user">
+            {% endif %}
                 <span>join</span>
             </a>
             <form class="header-form">
